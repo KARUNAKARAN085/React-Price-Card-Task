@@ -44,7 +44,7 @@ const App = () => {
         "Unlimited Private Projects",
         "Dedicated Phone Support",
         "Unlimited Free Subdomains",
-        "Monthly Status Report"
+        "Monthly Status Reports"
       ]
     }
   ]
