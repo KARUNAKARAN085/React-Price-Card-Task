@@ -8,6 +8,7 @@ const App = () => {
     {
       top: "FREE",
       price: "0",
+      iftrue: true,
       features: [
         "Single User",
         "50GB Storage",
@@ -22,6 +23,7 @@ const App = () => {
     {
       top: "PLUS",
       price: "9",
+      iftrue: true,
       features: [
         "5 Users",
         "100GB Storage",
@@ -36,6 +38,7 @@ const App = () => {
     {
       top: "PRO",
       price: "49",
+      iftrue: false,
       features: [
         "Unlimited Users",
         "500GB Storage",
@@ -52,7 +55,7 @@ const App = () => {
   return (
     <>
     <h1 className="text-center">React Price Card Task</h1>
-    <div className="container">
+    <div className="container rounded">
       {
         cardData.map((data, index) => (
           <Card

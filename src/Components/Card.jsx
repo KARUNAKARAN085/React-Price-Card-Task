@@ -1,35 +1,33 @@
 import "./Card.css";
 
 const Card = (props) => {
-  // console.log(props.data);
-
-  const styleObjectFalse = {
-    color: "gray",
-  };
-  const styleObjectTrue = {
-    color: "black",
-  };
-
-  const isTrue = true;
-
   return (
     <div className="card">
       <p className="text-center">{props.data.top}</p>
       <h1 className="header">${props.data.price}/months</h1>
       <hr />
-      {props.data.features.map((feature, index) => (
-        <p key={index} style={isTrue ? styleObjectTrue : styleObjectFalse}>
-          ✔ {feature}
-        </p>
-      ))}
-      <button
-        className="btn btn-primary"
-        style={isTrue ? styleObjectTrue : styleObjectFalse}
-      >
-        Button
-      </button>
+      {props.data.features.map((feature, index) => {
+        if (
+          (props.data.top === "FREE" && index < 4) ||
+          (props.data.top === "PLUS" && index < 7) ||
+          props.data.top === "PRO"
+        ) {
+          return (
+            <p key={index}>
+              <p>✔ {`${feature}`}</p>
+            </p>
+          );
+        } else {
+          return (
+            <p key={index}>
+              <p className="text-secondary">✘ {`${feature}`}</p>
+            </p>
+          );
+        }
+      })}
+      <button className="btn btn-primary text-white">BUTTON</button>
     </div>
   );
 };
 
-export default Card
+export default Card;
