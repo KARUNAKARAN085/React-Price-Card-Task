@@ -25,7 +25,10 @@ const Card = (props) => {
           );
         }
       })}
-      <button className="btn btn-primary text-white">BUTTON</button>
+      <div className="d-grid">
+        <a href="#"className="btn btn-primary text-white">BUTTON</a>
+      </div>
+      
     </div>
   );
 };
